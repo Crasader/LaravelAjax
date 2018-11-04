@@ -82,33 +82,32 @@ $(function(){
       var description = $('#description-edit').val();
       var post_id = $('#post_id').val();
 
+      if (title == "") {
+        $("[name=title]").css("border","2px solid #ff1505");
 
-      //if (title == "") {
-        //$("[name=title]").css("border","2px solid #ff1505");
+        return false;
 
-        //return false;
+      } else {
+        $("[name=title]").css("border","2px solid");
+      }
 
-      //} else {
-        //$("[name=title]").css("border","2px solid");
-      //}
+      if (author == "") {
+        $("[name=author]").css("border","2px solid #ff1505");
 
-      //if (author == "") {
-        //$("[name=author]").css("border","2px solid #ff1505");
+        return false;
 
-        //return false;
+      } else {
+         $("[name=author]").css("border","2px solid");
+      }
 
-      //} else {
-         //$("[name=author]").css("border","2px solid");
-      //}
+      if (description == "") {
+        $("[name=description]").css("border","2px solid #ff1505");
 
-      //if (description == "") {
-        //$("[name=description]").css("border","2px solid #ff1505");
+        return false;
 
-        //return false;
-
-      //} else {
-         //$("[name=description]").css("border","2px solid ");
-      //}
+      } else {
+         $("[name=description]").css("border","2px solid ");
+      }
 
 
       e.preventDefault();
@@ -154,4 +153,3 @@ $(function(){
 
 
 });
-

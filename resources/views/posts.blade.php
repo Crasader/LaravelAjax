@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <hr />
     <div class="container">
         <h1>Posts List</h1>
         <p>
@@ -11,31 +12,31 @@
         </p>
         <table class="table table-inverse">
             <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Description</th>
-                <th>Action</th>
-            </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
             </thead>
             <tbody id="posts-list" name="posts-list">
-            @foreach ($posts as $post)
-                <tr id="link{{$post->id}}">
-                    <td>{{$post->id}}</td>
-                    <td>{{$post->title}}</td>
-                    <td>{{$post->author}}</td>
-                    <td>{{$post->description}}</td>
-                    <td>
-                        <button class="btn btn-info" id="modal-edit" data-toggle="modal" data-target="#postsEditModal" value="{{$post->id}}">
-                            Edit
-                        </button>
-                        <button class="btn btn-danger delete-post" value="{{$post->id}}">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
-            @endforeach
+                @foreach ($posts as $post)
+                    <tr id="link{{$post->id}}">
+                        <td>{{$post->id}}</td>
+                        <td>{{$post->title}}</td>
+                        <td>{{$post->author}}</td>
+                        <td>{{$post->description}}</td>
+                        <td>
+                            <button class="btn btn-info" id="modal-edit" data-toggle="modal" data-target="#postsEditModal" value="{{$post->id}}">
+                                Edit
+                            </button>
+                            <button class="btn btn-danger delete-post" value="{{$post->id}}">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 
@@ -67,7 +68,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="description" name="description" placeholder="Enter description" />
+                                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter description"></textarea>
                                     </div>
                                 </div>
                             </form>
@@ -110,7 +111,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Description</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="description-edit" name="description" placeholder="Enter description" />
+                                        <textarea type="text" class="form-control" id="description-edit" name="description" placeholder="Enter description"></textarea>
                                     </div>
                                 </div>
                             </form>

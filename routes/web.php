@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/register', 'RegisterController@getRegister')->name('register');
+Route::post('/register', 'RegisterController@postRegister')->name('register');
+
+Route::get('/login', 'AuthController@getLogin')->name('login');
+Route::post('/login', 'AuthController@postLogin')->name('login');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
 Route::get('/posts', 'PostsController@index');
 Route::post('/posts', 'PostsController@addPost');
 Route::get('/posts/edit/{post_id?}', 'PostsController@editPost');

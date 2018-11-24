@@ -32,6 +32,9 @@
                 <a class="nav-link" href="/posts">Posts</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/changePassword">Change Password</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
               </li>
           @endif
@@ -46,6 +49,8 @@
     <script type="text/javascript" src="js/register.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/forgotPassword.js"></script>
+    <script type="text/javascript" src="js/changePassword.js"></script>
 </body>
 </html>
 

@@ -18,6 +18,12 @@ Route::get('/', function () {
 Route::get('/register', 'RegisterController@getRegister')->name('register');
 Route::post('/register', 'RegisterController@postRegister')->name('register');
 
+Route::get('/forgotPassword', 'ForgotPasswordController@getForgotPassword')->name('forgotPassword');
+Route::post('/forgotPassword', 'ForgotPasswordController@postForgotPassword')->name('forgotPassword');
+
+Route::get('/changePassword', 'ChangePasswordController@getChangePassword')->name('changePassword');
+Route::post('/changePassword', 'ChangePasswordController@postChangePassword')->name('changePassword');
+
 Route::get('/login', 'AuthController@getLogin')->name('login');
 Route::post('/login', 'AuthController@postLogin')->name('login');
 Route::get('/logout', 'AuthController@logout')->name('logout');

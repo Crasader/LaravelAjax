@@ -17,6 +17,13 @@ class ForgotPasswordController extends Controller
 
     public function postForgotPassword(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'required|email',
+        ],[
+            'email.required' => 'Specify the email',
+            'email.email' => 'Specify a valid email address',
+        ]);
+
         $email = $request->get('email');
         $user = User::where('email', $email)->first();
         $hashed_random_password = Hash::make(str_random(8));

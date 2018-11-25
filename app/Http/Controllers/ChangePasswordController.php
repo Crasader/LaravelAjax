@@ -17,6 +17,15 @@ class ChangePasswordController extends Controller
 
     public function postChangePassword(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ],[
+            'email.required' => 'Specify the email',
+            'email.email' => 'Specify a valid email address',
+            'password.required' => 'Specify the password'
+        ]);
+
         $email = $request->get('email');
         $user = User::where('email', $email)->first();
         $user->password = Hash::make($request->get('password'));

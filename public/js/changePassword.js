@@ -1,6 +1,5 @@
 $(function() {
 
-  console.log("ok");
   $("#btn-change-password").click(function () {
     var token = $("input[name=_token]").val();
     var email = $("input[name=email]").val();

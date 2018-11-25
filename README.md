@@ -1,4 +1,7 @@
 # LaravelAjax
+
+[![Build Status](https://travis-ci.org/Tony133/LaravelAjax.svg?branch=master)](https://travis-ci.org/Tony133/LaravelAjax)
+
 Simple example Ajax with Laravel 5.7 and jQuery 
 
 ## Install with Composer

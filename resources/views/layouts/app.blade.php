@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Laravel AJAX</title>
 
 </head>
@@ -30,10 +31,13 @@
           @else
               <li class="nav-item">
                 <a class="nav-link" href="/posts">Posts</a>
-              </li>
-              <li class="nav-item">
+             </li>
+             <li class="nav-item">
                 <a class="nav-link" href="/changePassword">Change Password</a>
-              </li>
+             </li>
+             <li class="nav-user">
+                {{ Auth::user()->name }}
+             </li>
               <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
               </li>

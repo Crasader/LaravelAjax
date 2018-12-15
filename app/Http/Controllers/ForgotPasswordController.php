@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Events\ForgotPasswordEvent;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -28,8 +29,10 @@ class ForgotPasswordController extends Controller
         $user = User::where('email', $email)->first();
         $hashed_random_password = Hash::make(str_random(8));
         $user->password = $hashed_random_password;
-        $user->save();
 
+        \Event::dispatch(new ForgotPasswordEvent($user));
+
+        $user->save();
         return response()->json($user);
     }
 }

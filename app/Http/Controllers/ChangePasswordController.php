@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use App\Events\ChangePasswordEvent;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -29,6 +30,9 @@ class ChangePasswordController extends Controller
         $email = $request->get('email');
         $user = User::where('email', $email)->first();
         $user->password = Hash::make($request->get('password'));
+
+        \Event::dispatch(new ChangePasswordEvent($user));
+
         $user->save();
 
         return response()->json($user);

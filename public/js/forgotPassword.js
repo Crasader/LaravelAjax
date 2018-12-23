@@ -18,7 +18,6 @@ $(function() {
       "email": email,
     };
 
-    console.log(data);
     $.ajax({
       type: "POST",
       url: "/forgotPassword",

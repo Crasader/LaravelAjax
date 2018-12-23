@@ -1,6 +1,7 @@
 $(function() {
 
   $("#btn-register").click(function () {
+
     var token = $("input[name=_token]").val();
     var name = $("input[name=name]").val();
     var email = $("input[name=email]").val();
@@ -41,7 +42,6 @@ $(function() {
       "password": password
     };
 
-    console.log(data);
     $.ajax({
       type: "POST",
       url: "/register",

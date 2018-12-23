@@ -7,7 +7,7 @@ $(function() {
   });
 
   $("#btn-login").click(function () {
-    //var token = $("input[name=_token]").val();
+    var token = $("input[name=_token]").val();
     var email = $("input[name=email]").val();
     var password = $("input[name=password]").val();
 
@@ -31,7 +31,7 @@ $(function() {
 
 
     var data = {
-      //"_token": token,
+      "_token": token,
       "email": email,
       "password": password
     };
@@ -42,10 +42,8 @@ $(function() {
       data: data,
       dataType: 'json',
       success: function (data) {
-        console.log(data);
         if (data != "") {
           window.location.href = "/posts";
-          console.log("ok!");
         }
       },
       error: function (data) {
@@ -54,6 +52,6 @@ $(function() {
       }
     });
 
-    //return false;
+    return false;
   });
 });

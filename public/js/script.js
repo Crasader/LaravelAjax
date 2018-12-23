@@ -50,7 +50,7 @@ $(function(){
                 post += '<button class="btn btn-danger delete-post" value="' + data.id + '">Delete</button></td></tr>';
                 $('#posts-list').append(post);
                 $('#postsAddModal').modal('hide');
-              console.log(data);
+
                 window.location.reload();
             },
             error: function (data) {
@@ -64,9 +64,9 @@ $(function(){
     // EDIT
     $('body').on('click', '#modal-edit', function () {
       var post_id = $(this).val();
-      console.log(post_id);
+
       $.get('/posts/edit/' + post_id, function (data) {
-          console.log(data);
+
           $('#post_id').val(data.id);
           var title = $('#title-edit').val(data.title);
           var author = $('#author-edit').val(data.author);
@@ -117,14 +117,14 @@ $(function(){
             data: {"title": title, "author": author, "description": description },
             dataType: 'json',
             success: function (data) {
-              console.log(data);
+
               var post = '<tr id="post' + data.id + '"><td>' + data.id + '</td><td>' + data.title + '</td>><td>' + data.author + '</td><td>' + data.description + '</td>';
                 post += '<td><button class="btn btn-info open-modal" value="' + data.id + '">Edit</button>&nbsp;';
                 post += '<button class="btn btn-danger delete-post" value="' + data.id + '">Delete</button></td></tr>';
                 $("#post_id" + post_id).replaceWith(post);
                 $('#postsEditModal').modal('hide');
-                window.location.reload();
-                console.log(data);
+
+              window.location.reload();
             },
             error: function (data) {
                 console.log('Error:', data.responseJSON);

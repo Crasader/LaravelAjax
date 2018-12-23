@@ -1,6 +1,7 @@
 $(function() {
 
   $("#btn-change-password").click(function () {
+
     var token = $("input[name=_token]").val();
     var email = $("input[name=email]").val();
     var password = $("input[name=password]").val();
@@ -29,7 +30,6 @@ $(function() {
       "password": password,
     };
 
-    console.log(data);
     $.ajax({
       type: "POST",
       url: "/changePassword",

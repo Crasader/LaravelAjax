@@ -33,6 +33,7 @@ class ForgotPasswordController extends Controller
         \Event::dispatch(new ForgotPasswordEvent($user));
 
         $user->save();
+
         return response()->json($user);
     }
 }

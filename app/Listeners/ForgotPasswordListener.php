@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\ForgotPasswordEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Mail;
 
 class ForgotPasswordListener
 {
@@ -26,9 +27,18 @@ class ForgotPasswordListener
      */
     public function handle(ForgotPasswordEvent $event)
     {
+        $user = $event->user;
         $name = $event->user->name;
         $email = $event->user->email;
+        $password = $event->user->password;
 
-        // Send email
+
+        $data = [
+            'name'=> $name,
+            'email' => $email,
+            'password' => $password
+        ];
+
+         Mail::to($email)->send(new \App\Mail\ForgotPasswordMail($user));
     }
 }

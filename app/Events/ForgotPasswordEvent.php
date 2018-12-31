@@ -15,7 +15,7 @@ class ForgotPasswordEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    //const NAME = 'forgotpassword.event.email_event_forgotpassword';
+    const NAME = 'forgotpassword.event.email_event_forgotpassword';
 
     /**
      * Create a new event instance.

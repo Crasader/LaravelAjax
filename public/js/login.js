@@ -29,7 +29,6 @@ $(function() {
       $("input[name=password]").css("border","2px solid");
     }
 
-
     var data = {
       "_token": token,
       "email": email,
